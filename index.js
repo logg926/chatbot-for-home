@@ -24,8 +24,6 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 
 //『／start』
 bot.onText(/\/start/, (msg, match) => {
-  console.log("chatids: ")
-  console.log(chatids)
   const chatid = msg.chat.id;
   if (chatids.indexOf(chatid) > -1) {
     bot.sendMessage(chatid, "you are already registered in the list");
@@ -33,6 +31,8 @@ bot.onText(/\/start/, (msg, match) => {
     chatids.push(chatid);
     bot.sendMessage(chatid, "starting for you");
   }
+  console.log("chatids: ")
+  console.log(chatids)
 });
 
 
@@ -45,6 +45,8 @@ bot.onText(/\/stop/, (msg, match) => {
   } else {
     bot.sendMessage(chatid, "You are not in the list");
   }
+  console.log("chatids: ")
+  console.log(chatids)
 });
 // Listen for any kind of message. There are different kinds of
 // messages.
